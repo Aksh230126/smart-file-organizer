@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # For flashing messages
 
 # Azure Blob Storage Configuration
-AZURE_CONNECTION_STRING = 'your azure string'
+AZURE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=smartfileorganizer;AccountKey=U+/89A/YwXIsvJKtvmZDLCJ2H8BMnTANgMtfUQpKl15VFUJZEGWY99VOMBVk30pweIlfXA3YYPAq+ASt+sa1YA==;EndpointSuffix=core.windows.net'
 CONTAINER_NAME = 'file-uploads'
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
 container_client = blob_service_client.get_container_client(CONTAINER_NAME)
