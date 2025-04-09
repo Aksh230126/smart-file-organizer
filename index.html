@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart File Organizer</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="page-wrapper">
+        <h1 class="main-heading">Welcome to Smart File Organizer</h1>
+
+        <div class="upload-box">
+            <h2>Upload a File</h2>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul class="flashes">
+                  {% for message in messages %}
+                    <li>{{ message }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
